@@ -6,19 +6,22 @@ import org.apache.spark.SparkConf
 object Ejemplos05Procesado {
   def main(args: Array[String]): Unit = {
     val sc = new SparkContext("local","Ejemplo05Procesado", System.getenv("SPARK_HOME"))
-    // Read the CSV file
+    // Lee el fichero CSV
     val csv = sc.textFile("resources/sample.csv").cache()
-    // split / clean data
-    val headerAndRows = csv.map(line => line.split(",").map(_.trim))
-    // get header
+    // Divide los datos y los limpia
+    val headerAndRows = csv.map(
+      line =>
+        line.split(",").map(_.trim)
+    )
+    // Coge la cabecera del fichero (nombres de campos)
     val header = headerAndRows.first
-    // filter out header (eh. just check if the first val matches the first header name)
+    // Quita la cabecera (eh. comprueba que el primer valor coincide con la cabecera)
     val data = headerAndRows.filter(_(0) != header(0))
-    // splits to map (header/value pairs)
+    // Cada fila en un map con (nombre_campo,valor)
     val maps = data.map(splits => header.zip(splits).toMap)
-    // filter out the user "me"
+    // Filtra el usuario "me" y persiste
     val result = maps.filter(map => map("user") != "me").persist()
-    // print result
+    // imprime el resultado
     result.foreach(println)
   }
 
