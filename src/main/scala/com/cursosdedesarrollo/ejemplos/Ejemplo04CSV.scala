@@ -11,7 +11,7 @@ object Ejemplos04CSV {
     //Reducir el número de LOG
     Logger.getLogger("org").setLevel(Level.OFF)
     //Creando el contexto del Servidor
-    val sc = new SparkContext("local","Ejemplo03Txt", System.getenv("SPARK_HOME"))
+    val sc = new SparkContext("local","Ejemplo04CSV", System.getenv("SPARK_HOME"))
     val spark = SparkSession
       .builder()
       .master("local")
