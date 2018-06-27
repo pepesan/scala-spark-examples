@@ -23,7 +23,7 @@ object Ejemplo09Bokeh {
       .config("log4j.rootCategory", "ERROR, console")
       .getOrCreate()
 
-
+  /*
     import org.dianahep.histogrammar._
     import org.dianahep.histogrammar.bokeh._
 
@@ -40,7 +40,7 @@ object Ejemplo09Bokeh {
     simple.foreach(labeling.fill(_))
     val plot_one = one.bokeh().plot()
     save(plot_one,"salidas/scala_plot_one.html")
-
+    */
     /*
     df = df.withColumnRenamed("_c0", "sepalLength")
     df = df.withColumnRenamed("_c1", "sepalWidth")
@@ -51,7 +51,7 @@ object Ejemplo09Bokeh {
     // identify the feature colunms
 
     */
-    df.printSchema()
+    //df.printSchema()
 
     /*
     val inputColumns = Array("SepalLengthCm", "SepalWidthCm", "PetalLengthCm", "PetalWidthCm")

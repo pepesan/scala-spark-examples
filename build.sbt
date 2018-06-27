@@ -32,6 +32,13 @@ libraryDependencies  ++= Seq(
   // It depends on LGPL code
   "org.scalanlp" %% "breeze-viz" % "0.13.2"
 )
+/*
+resolvers += "bintray-spark-packages" at "https://dl.bintray.com/spark-packages/maven/"
+
+addSbtPlugin("org.spark-packages" % "sbt-spark-package" % "0.2.6")
+libraryDependencies += "saurfang" %% "spark-knn" % "0.2.0"
+*/
+libraryDependencies += "org.diana-hep" %% "histogrammar" % "1.0.4"
 
 
 resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
