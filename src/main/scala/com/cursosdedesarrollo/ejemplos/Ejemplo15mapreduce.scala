@@ -38,6 +38,8 @@ object Ejemplo15mapreduce {
       a+b
     })
     println("reducidos:"+reducidos)
+
+
     val lines2=sc.parallelize(List("this is","an example"))
     val aplanados=lines2.flatMap(_.split(" "))
     println("aplanados:")
