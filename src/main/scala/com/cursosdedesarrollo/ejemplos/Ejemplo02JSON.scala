@@ -4,12 +4,14 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 import org.apache.log4j.{Level, Logger}
 
-object Ejemplos02JSON {
+object Ejemplo02JSON {
   def main(args: Array[String]): Unit = {
     //Reducir el número de LOG
-    Logger.getLogger("org").setLevel(Level.OFF)
+    //Logger.getLogger("org").setLevel(Level.OFF)
     //Creando el contexto del Servidor
-    val sc = new SparkContext("local","Ejemplo02JSON", System.getenv("SPARK_HOME"))
+    val sc = new SparkContext("local",
+      "Ejemplo02JSON",
+      System.getenv("SPARK_HOME"))
     //Creando la sesión
     val spark = SparkSession
       .builder()

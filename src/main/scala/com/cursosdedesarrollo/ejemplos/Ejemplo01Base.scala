@@ -9,7 +9,9 @@ import org.apache.log4j.Level
 object Ejemplo01Base {
   def main(args: Array[String]): Unit = {
     //Creando el contexto del Servidor
-    val sc = new SparkContext("local","Ejemplo01Base", System.getenv("SPARK_HOME"))
+    val sc = new SparkContext("local",
+      "Ejemplo01Base",
+      System.getenv("SPARK_HOME"))
     sc.setLogLevel("ERROR")
     val spark = SparkSession
       .builder()
