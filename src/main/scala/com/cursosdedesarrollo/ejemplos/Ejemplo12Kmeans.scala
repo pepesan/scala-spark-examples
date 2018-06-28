@@ -32,9 +32,10 @@ object Ejemplo12Kmeans {
     println(s"Within Set Sum of Squared Errors = $WSSSE")
 
     // Save and load model
+    /*
     clusters.save(sc, "salidas/KMeansModel")
     val sameModel = KMeansModel.load(sc, "salidas/KMeansModel")
-
+    */
   }
 
 

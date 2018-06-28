@@ -19,7 +19,7 @@ object Ejemplo14DecissionTree {
       .appName("CargaJSON")
       .getOrCreate()
     // Load the data stored in LIBSVM format as a DataFrame.
-    val data = spark.read.format("libsvm").load("resources/sample_libsvm_data.txt")
+    val data = spark.read.format("libsvm").load("resources/sample_libsvm_data.txt").cache()
 
     // Index labels, adding metadata to the label column.
     // Fit on whole dataset to include all labels in index.
@@ -41,6 +41,7 @@ object Ejemplo14DecissionTree {
     val dt = new DecisionTreeClassifier()
       .setLabelCol("indexedLabel")
       .setFeaturesCol("indexedFeatures")
+      .setMaxDepth(3)
 
     // Convert indexed labels back to original labels.
     val labelConverter = new IndexToString()
@@ -71,7 +72,7 @@ object Ejemplo14DecissionTree {
 
     val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
     println(s"Learned classification tree model:\n ${treeModel.toDebugString}")
-
+    Thread.sleep(200000);
   }
 
 }

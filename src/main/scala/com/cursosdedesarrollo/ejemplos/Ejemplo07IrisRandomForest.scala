@@ -59,6 +59,7 @@ object Ejemplo07IrisRandomForest {
     // train the algorithm based on a Random Forest Classification Algorithm with default values// train the algorithm based on a Random Forest Classification Algorithm with default values
 
     val randomForestClassifier = new RandomForestClassifier().setSeed(seed)
+    //randomForestClassifier.setMaxDepth(4)
     val model = randomForestClassifier.fit(trainingSet)
     // test the model against the test set       
     val predictions = model.transform(testSet)
