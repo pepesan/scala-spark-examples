@@ -13,7 +13,9 @@ object Ejemplo20Streaming {
   def main(args: Array[String]): Unit = {
     //Creando el contexto del Servidor
     val conf = new SparkConf().setAppName("Ejemplo20Streaming").setMaster("local[2]")
-    val ssc = new StreamingContext(conf, Seconds(1))
+    val ssc = new StreamingContext(conf, Seconds(5))
+    val sc = ssc.sparkContext
+    sc.setLogLevel("ERROR")
     // Create a DStream that will connect to hostname:port, like localhost:9999
     val lines = ssc.socketTextStream("localhost", 9999)
     // Split each line into words
