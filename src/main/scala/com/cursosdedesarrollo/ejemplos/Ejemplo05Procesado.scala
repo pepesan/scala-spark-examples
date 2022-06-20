@@ -3,7 +3,7 @@ package com.cursosdedesarrollo.ejemplos
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 
-object Ejemplos05Procesado {
+object Ejemplo05Procesado {
   def main(args: Array[String]): Unit = {
     val sc = new SparkContext("local","Ejemplo05Procesado", System.getenv("SPARK_HOME"))
     // Lee el fichero CSV
