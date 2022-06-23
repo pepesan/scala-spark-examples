@@ -5,8 +5,6 @@ version := "0.1"
 scalaVersion := "2.12.8"
 
 val sparkVersion = "3.3.0"
-val vegasVersion = "0.3.11"
-val bokehVersion = "1.0.4"
 
 
 

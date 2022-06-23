@@ -1,5 +1,8 @@
 package com.cursosdedesarrollo.ejemplos
-
+/*
+Ejemplo original:
+https://github.com/scalanlp/breeze/wiki/Quickstart
+ */
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
@@ -40,7 +43,16 @@ object Ejemplo10BrezeViz {
     p.xlabel = "x axis"
     p.ylabel = "y axis"
     f.saveas("resources/lines.png") // save current figure as a .png, eps and pdf also supported
-
+    // Definición de un subplot
+    val p2 = f.subplot(2,1,1)
+    val g = breeze.stats.distributions.Gaussian(0,1)
+    p2 += hist(g.sample(100000),100)
+    p2.title = "A normal distribution"
+    f.saveas("resources/subplots.png")
+    // Crea una nueva figura con una matrix densa
+    val f2 = Figure()
+    f2.subplot(0) += image(DenseMatrix.rand(200,200))
+    f2.saveas("resources/image.png")
     /*
     df = df.withColumnRenamed("_c0", "sepalLength")
     df = df.withColumnRenamed("_c1", "sepalWidth")
