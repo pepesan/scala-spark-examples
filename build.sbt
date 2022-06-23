@@ -5,7 +5,7 @@ version := "0.1"
 scalaVersion := "2.12.8"
 
 val sparkVersion = "3.3.0"
-val vegasVersion = "0.3.9"
+val vegasVersion = "0.3.11"
 val bokehVersion = "1.0.4"
 
 
@@ -24,8 +24,9 @@ libraryDependencies += "org.apache.spark" %% "spark-mllib" % sparkVersion
 
 
 //libraryDependencies += "org.apache.spark" % "spark-streaming_2.11" % sparkVersion
-//libraryDependencies += "org.vegas-viz" %% "vegas" % vegasVersion
-//libraryDependencies += "org.vegas-viz" %% "vegas-spark" % vegasVersion
+libraryDependencies += "org.scalanlp" %% "breeze" % "1.1"
+libraryDependencies += "org.scalanlp" %% "breeze-viz" % "1.1"
+resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
 /*
 libraryDependencies  ++= Seq(
   // Last stable release
