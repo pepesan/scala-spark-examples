@@ -5,7 +5,10 @@ import org.apache.spark.sql.{Column, SparkSession, functions}
 
 object Ejemplos05_04_MapReduce {
   def main(args: Array[String]): Unit = {
-    val sc = new SparkContext("local", "Ejemplo05Procesado", System.getenv("SPARK_HOME"))
+    val sc = new SparkContext(
+      "local",
+      "Ejemplo05Procesado",
+      System.getenv("SPARK_HOME"))
     val spark = SparkSession
       .builder()
       .master("local")
@@ -19,7 +22,27 @@ object Ejemplos05_04_MapReduce {
     val mappedRDD = inputRDD.map(value => (value % 2, value))
 
     // Reduce: Aplica una función de reducción para combinar los valores con la misma clave
-    val reducedRDD = mappedRDD.reduceByKey(_ + _)
+    val reducedRDD = mappedRDD.reduceByKey(
+      /*
+        Java Puro y Duro
+        public Data calculateSumatory(Data acc, Data act){
+          return acc+act;
+        }
+        Java Lambda
+        (Data acc, Data act) => {
+          return acc + act;
+        }
+        Java Lambda Corta
+        (acc, act) => return acc+act;
+
+        Salto cualitativo
+
+        Scala Lambda Corta
+        (_, _) => return _ + _ ;
+        (_, _) => _ + _
+       */
+        _ + _
+    )
 
     // Recopila los resultados
     val result = reducedRDD.collect()

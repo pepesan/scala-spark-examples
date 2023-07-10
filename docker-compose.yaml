@@ -14,6 +14,13 @@ services:
       - SPARK_MASTER=spark://spark-master:7077 # URL del Spark Master
     depends_on:
       - spark-master
+  spark-worker2:
+    image: bde2020/spark-worker:3.3.0-hadoop3.3
+    container_name: spark-worker2
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077 # URL del Spark Master
+    depends_on:
+      - spark-master
 
   namenode:
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
