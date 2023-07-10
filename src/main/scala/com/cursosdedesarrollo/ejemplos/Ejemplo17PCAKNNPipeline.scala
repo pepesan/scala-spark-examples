@@ -1,16 +1,12 @@
 package com.cursosdedesarrollo.ejemplos
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.ml.Pipeline
 //import org.apache.spark.ml.classification.KNNClassifier
-import org.apache.spark.ml.feature.PCA
-import org.apache.spark.mllib.util.MLUtils
-import org.apache.spark.sql.{DataFrame, SparkSession}
-import org.apache.log4j
 
 object Ejemplo17PCAKNNPipeline {
-  val logger = log4j.Logger.getLogger(getClass)
+  Logger.getLogger("org").setLevel(Level.OFF)
   def main(args: Array[String]): Unit = {
     //Creando el contexto del Servidor
     val sc = new SparkContext("local","Ejemplo01Base", System.getenv("SPARK_HOME"))
@@ -20,7 +16,6 @@ object Ejemplo17PCAKNNPipeline {
       .master("local")
       .appName("CargaJSON")
       .getOrCreate()
-    import spark.implicits._
     /*
     //read in raw label and features
     val rawDataset = MLUtils.loadLibSVMFile(sc, "data/mnist/mnist.bz2")

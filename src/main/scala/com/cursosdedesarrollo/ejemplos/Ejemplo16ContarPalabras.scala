@@ -16,16 +16,16 @@ object Ejemplo16ContarPalabras{
       .master("local")
       .appName("CargaJSON")
       .getOrCreate()
-    import spark.implicits._
-    val data = spark.read.text("resources/data.txt").as[String]
-
-    val words = data.flatMap(value => value.split("\\s+"))
-
-    val groupedWords = words.groupByKey(_.toLowerCase)
-
-    val counts = groupedWords.count()
-
-    counts.show()
+//
+//    val data = spark.read.text("resources/data.txt").as[String]
+//
+//    val words = data.flatMap(value => value.split("\\s+"))
+//
+//    val groupedWords = words.groupByKey(_.toLowerCase)
+//
+//    val counts = groupedWords.count()
+//
+//    counts.show()
   }
 
 }

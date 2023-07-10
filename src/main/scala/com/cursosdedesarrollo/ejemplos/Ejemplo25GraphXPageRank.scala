@@ -1,8 +1,7 @@
 package com.cursosdedesarrollo.ejemplos
 
 import org.apache.spark.SparkContext
-import org.apache.spark.graphx.{Edge, Graph, VertexId}
-import org.apache.spark.rdd.RDD
+import org.apache.spark.graphx.GraphLoader
 
 
 object Ejemplo25GraphXPageRank {
@@ -12,7 +11,6 @@ object Ejemplo25GraphXPageRank {
       "Ejemplo24GraphXBasico",
       System.getenv("SPARK_HOME"))
     sc.setLogLevel("ERROR")
-    import org.apache.spark.graphx.GraphLoader
 
     // Load my user data and parse into tuples of user id and attribute list
     val users = (sc.textFile("resources/users.txt")

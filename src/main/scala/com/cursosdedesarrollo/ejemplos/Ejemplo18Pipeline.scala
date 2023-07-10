@@ -2,12 +2,10 @@ package com.cursosdedesarrollo.ejemplos
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.classification.LogisticRegression
 import org.apache.spark.ml.feature.{HashingTF, Tokenizer}
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.Row
+import org.apache.spark.ml.{Pipeline, PipelineModel}
+import org.apache.spark.sql.SparkSession
 
 object Ejemplo18Pipeline {
   def main(args: Array[String]): Unit = {
@@ -65,12 +63,12 @@ object Ejemplo18Pipeline {
     )).toDF("id", "text")
 
     // Make predictions on test documents.
-    model.transform(test)
-      .select("id", "text", "probability", "prediction")
-      .collect()
-      .foreach { case Row(id: Long, text: String, prob: Vector, prediction: Double) =>
-        println(s"($id, $text) --> prob=$prob, prediction=$prediction")
-      }
+//    model.transform(test)
+//      .select("id", "text", "probability", "prediction")
+//      .collect()
+//      .foreach { case Row(id: Long, text: String, prob: Vector, prediction: Double) =>
+//        println(s"($id, $text) --> prob=$prob, prediction=$prediction")
+//      }
     // $example off$
 
     spark.stop()

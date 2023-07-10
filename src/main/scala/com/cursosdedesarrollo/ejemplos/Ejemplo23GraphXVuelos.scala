@@ -1,6 +1,6 @@
 package com.cursosdedesarrollo.ejemplos
 
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkContext
 import org.apache.spark.graphx.{Edge, Graph, VertexId}
 
 case class Flight(

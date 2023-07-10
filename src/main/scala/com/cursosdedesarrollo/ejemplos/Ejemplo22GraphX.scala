@@ -1,11 +1,7 @@
 package com.cursosdedesarrollo.ejemplos
 
-import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.SparkContext
-import org.apache.spark.graphx.{Edge, Graph, VertexId}
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.SparkSession
-
+import org.apache.spark.graphx.{Edge, Graph}
 
 
 object Ejemplo22GraphX {
