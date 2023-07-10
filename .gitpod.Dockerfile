@@ -9,4 +9,6 @@ RUN brew install scala sbt scalaenv
 #  -r sonatype:snapshots \
 #  -o /usr/local/bin/scalafmt --standalone --main org.scalafmt.cli.Cli
 
+# buscando las versiones instalables
+RUN scalaenv install -l
 RUN scalaenv install scala-2.12.15 && scalaenv global scala-2.12.15
