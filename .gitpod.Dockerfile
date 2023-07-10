@@ -11,4 +11,4 @@ RUN brew install scala sbt scalaenv
 
 # buscando las versiones instalables
 RUN scalaenv install -l
-RUN scalaenv install scala-2.12.15 && scalaenv global scala-2.12.15
+RUN scalaenv install scala-2.12.14 && scalaenv global scala-2.12.14
