@@ -2,3 +2,4 @@
 target
 project
 spark-warehouse
+resources/salida/*
