@@ -8,4 +8,4 @@ RUN brew install scala coursier/formulas/coursier sbt scalaenv
 #  -r sonatype:snapshots \
 #  -o /usr/local/bin/scalafmt --standalone --main org.scalafmt.cli.Cli
 
-RUN scalaenv install scala-2.12.17 && scalaenv global scala-2.12.17
+RUN scalaenv install scala-2.12.15 && scalaenv global scala-2.12.15

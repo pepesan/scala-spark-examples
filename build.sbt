@@ -1,6 +1,6 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "2.12.17"
+ThisBuild / scalaVersion := "2.12.15"
 
 val sparkVersion = "3.4.1"
 val vegasVersion = "0.3.9"
