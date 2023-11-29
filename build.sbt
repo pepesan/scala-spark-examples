@@ -2,11 +2,10 @@ name := "scala-spark-examples"
 
 version := "0.1"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.8"
 
 val sparkVersion = "3.3.0"
-val vegasVersion = "0.3.9"
-val bokehVersion = "1.0.4"
+
 
 
 

@@ -23,6 +23,7 @@ object Ejemplos05Procesado {
     val result = maps.filter(map => map("user") != "me").persist()
     // imprime el resultado
     result.foreach(println)
+
   }
 
 }
