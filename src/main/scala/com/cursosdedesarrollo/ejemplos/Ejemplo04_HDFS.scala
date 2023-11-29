@@ -7,6 +7,7 @@ object Ejemplo04_HDFS {
     // Crear una sesión de Spark
     val spark = SparkSession
       .builder()
+      // https://github.com/bitnami/containers/issues/13997#issuecomment-1435960418
       .master("local")
       //.master("spark://localhost:7077")
       .appName("CargaHDFS")
@@ -27,7 +28,8 @@ object Ejemplo04_HDFS {
 
     // Escribir el DataFrame en el archivo CSV en HDFS
     df.write
-      .mode(SaveMode.Overwrite)  // Puedes cambiar esto según tus necesidades (Append, Ignore, ErrorIfExists)
+      .mode(SaveMode.Overwrite)
+      // Puedes cambiar esto según tus necesidades (Append, Ignore, ErrorIfExists)
       .csv(hdfsCsvPath)
 
     println("Datos escritos en CSV en HDFS")
