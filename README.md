@@ -1,4 +1,4 @@
-## Proyecto de Ejemplos de Spark 3.4.1 con Scala 2.12
+## Proyecto de Ejemplos de Spark 3.4.1 con Scala 2.13.8
 
 Probando en Gitpod
 
