@@ -2,13 +2,10 @@ package com.cursosdedesarrollo.ejemplos
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.spark.ml.regression.LinearRegression
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.ml.feature.VectorAssembler
-import org.apache.spark.sql.Dataset
-import org.apache.spark.ml.classification.RandomForestClassificationModel
 import org.apache.spark.ml.classification.RandomForestClassifier
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.sql.SparkSession
 
 
 object Ejemplo07IrisRandomForest {
@@ -30,8 +27,6 @@ object Ejemplo07IrisRandomForest {
       .option("delimiter", ",")
       .option("inferSchema", "true")
       .load("resources/iris-multiclass.csv")
-
-    import spark.implicits._
     /*
     df = df.withColumnRenamed("_c0", "sepalLength")
     df = df.withColumnRenamed("_c1", "sepalWidth")

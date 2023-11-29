@@ -1,13 +1,9 @@
 package com.cursosdedesarrollo.ejemplos
 
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.mllib.clustering.KMeans
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkContext
 import org.apache.spark.ml.regression.LinearRegression
-
-import scala.io.Source
+import org.apache.spark.sql.SparkSession
 
 /**
   * Created by AZ on 31.01.2017

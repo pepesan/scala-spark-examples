@@ -1,12 +1,10 @@
 package com.cursosdedesarrollo.ejemplos
 
-import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
-import org.apache.log4j.Level
-import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
+import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.sql.SparkSession
+
 object Ejemplo12Kmeans {
   def main(args: Array[String]): Unit = {
     //Creando el contexto del Servidor

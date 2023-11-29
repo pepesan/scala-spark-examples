@@ -1,6 +1,5 @@
 package com.cursosdedesarrollo.ejemplos
 
-
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
@@ -27,11 +26,7 @@ object Ejemplo10BrezeViz {
       .option("delimiter", ",")
       .option("inferSchema", "true")
       .load("resources/iris-multiclass.csv")
-
-
-    import breeze.linalg._
-    import breeze.plot._
-
+    /*
     val f = Figure()
     val p = f.subplot(0)
     val x = linspace(0.0,1.0)
@@ -40,7 +35,7 @@ object Ejemplo10BrezeViz {
     p.xlabel = "x axis"
     p.ylabel = "y axis"
     f.saveas("salidas/lines.png") // save current figure as a .png, eps and pdf also supported
-
+    */
     /*
     df = df.withColumnRenamed("_c0", "sepalLength")
     df = df.withColumnRenamed("_c1", "sepalWidth")

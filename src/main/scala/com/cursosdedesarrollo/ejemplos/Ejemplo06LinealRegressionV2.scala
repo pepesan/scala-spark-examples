@@ -1,10 +1,10 @@
 package com.cursosdedesarrollo.ejemplos
 
 import org.apache.spark.SparkContext
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.mllib.classification.{SVMModel, SVMWithSGD}
+import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
 import org.apache.spark.mllib.util.MLUtils
+import org.apache.spark.sql.SparkSession
 
 object Ejemplo06LinealRegressionV2 {
   def main(args: Array[String]): Unit = {
