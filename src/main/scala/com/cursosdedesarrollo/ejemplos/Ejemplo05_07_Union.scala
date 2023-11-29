@@ -14,24 +14,24 @@ object Ejemplos05_07_Union {
       .master("local")
       .appName("CargaJSON")
       .getOrCreate()
-    val employeeData = Seq(
-      Employee("IT", "Alice"),
-      Employee("HR", "Bob"),
-      Employee("Finance", "Charlie")
-    )
-    val departmentData = Seq(
-      Department("IT", "New York"),
-      Department("HR", "London"),
-      Department("Sales", "Paris")
-    )
-    val employeeDF = spark.createDataFrame(employeeData)
-    val departmentDF = spark.createDataFrame(departmentData)
+    // Crear DataFrame 1
+    val df1 = spark.createDataFrame(Seq(
+      (1, "Alice"),
+      (2, "Bob"),
+      (3, "Charlie")
+    )).toDF("id", "name")
 
-    // Realiza la operación de join
-    val joinedDF = employeeDF.join(departmentDF, Seq("department"), "inner")
+    // Crear DataFrame 2
+    val df2 = spark.createDataFrame(Seq(
+      (4, "David"),
+      (5, "Eva")
+    )).toDF("id", "name")
 
-    // Muestra los resultados
-    joinedDF.show()
+    // Realizar la unión de los DataFrames
+    val result = df1.union(df2)
+
+    // Mostrar el resultado
+    result.show()
 
     // Cierra la sesión de Spark al finalizar
     spark.stop()

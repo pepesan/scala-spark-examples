@@ -28,7 +28,9 @@ object Ejemplos05_02_Procesado {
     filteredDF.show()
 
     // Agrupa por nombre y calcula el promedio de edad
-    val avgAgeDF = df.groupBy("name").agg(functions.avg("age").alias("avg_age"))
+    val avgAgeDF = df.groupBy("name")
+      .agg(functions.avg("age")
+        .alias("avg_age"))
     avgAgeDF.show()
 
     // Ordena por edad de forma descendente

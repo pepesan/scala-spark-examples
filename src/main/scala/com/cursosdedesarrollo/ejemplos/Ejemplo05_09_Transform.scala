@@ -32,7 +32,9 @@ object Ejemplos05_09_Transform {
 
 
     val df = spark.createDataFrame(ventas)
+    // secuencia de campos
     val columnas = Seq("fecha", "producto", "cantidad", "precio_unitario")
+    // asignación de nombres de campos a campos
     val dfConNombres = columnas.zip(df.schema.fieldNames).foldLeft(df) { (acc, columnas) =>
       acc.withColumnRenamed(columnas._2, columnas._1)
     }

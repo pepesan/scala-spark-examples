@@ -29,8 +29,20 @@ object Ejemplos05_08_Ventana {
 
     // Utiliza funciones de ventana para realizar cálculos en el conjunto de filas
     val result = df.withColumn("row_number", functions.row_number().over(windowSpec))
+      /*
+      Propósito: La función rank asigna un rango a cada fila dentro de un marco de ventana basado en el orden de una columna específica.
+      Uso típico: Puedes utilizar rank para asignar clasificaciones a los registros según ciertos criterios. Por ejemplo, clasificar los empleados según su salario.
+       */
       .withColumn("rank", functions.rank().over(windowSpec))
+      /*
+      Propósito: La función lag permite acceder al valor de una columna en la fila anterior dentro de un marco de ventana.
+      Uso típico: Puedes usar lag para calcular la diferencia entre el valor actual y el valor anterior en una serie temporal o para realizar cálculos basados en valores anteriores.
+       */
       .withColumn("revenue_lag", functions.lag("revenue", 1).over(windowSpec))
+      /*
+      Propósito: La función lead es similar a lag, pero accede al valor de una columna en la fila siguiente dentro de un marco de ventana.
+      Uso típico: lead es útil para calcular la diferencia entre el valor actual y el valor siguiente en una serie temporal o para realizar cálculos basados en valores futuros
+       */
       .withColumn("revenue_lead", functions.lead("revenue", 1).over(windowSpec))
 
     // Muestra los resultados
