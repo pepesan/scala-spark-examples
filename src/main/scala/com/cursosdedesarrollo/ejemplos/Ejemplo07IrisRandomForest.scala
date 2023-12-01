@@ -19,7 +19,7 @@ object Ejemplo07IrisRandomForest {
     val spark = SparkSession
       .builder()
       .master("local")
-      .appName("CargaJSON")
+      .appName("CargaIRIS")
       .config("log4j.rootCategory", "ERROR, console")
       .getOrCreate()
     var df = spark.read.format("csv")

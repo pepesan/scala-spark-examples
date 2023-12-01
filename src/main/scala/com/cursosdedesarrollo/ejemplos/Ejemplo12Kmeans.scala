@@ -21,7 +21,7 @@ object Ejemplo12Kmeans {
     val parsedData = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble))).cache()
 
     // Cluster the data into two classes using KMeans
-    val numClusters = 2
+    val numClusters = 5
     val numIterations = 20
     val clusters = KMeans.train(parsedData, numClusters, numIterations)
 
